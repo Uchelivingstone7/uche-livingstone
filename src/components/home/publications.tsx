@@ -9,7 +9,7 @@ const Publications = () => {
       <PageWrapper>
         <Rise className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="kicker text-lime">News</p>
+            <p className="kicker text-lime">Feature</p>
             <h2 className="display mt-4 text-4xl sm:text-6xl">In the news.</h2>
           </div>
           <Link href="/news" className="text-sm text-lime underline-offset-4 hover:underline">

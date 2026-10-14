@@ -17,7 +17,7 @@ export default function PublicationsPage() {
       <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24">
         <TechMarks />
         <PageWrapper className="relative">
-          <p className="kicker text-lime">News</p>
+          <p className="kicker text-lime">Feature</p>
           <h1 className="display mt-6 max-w-5xl text-[clamp(3.2rem,7.4vw,6.6rem)]">
             <MaskLines lines={["News."]} />
           </h1>
