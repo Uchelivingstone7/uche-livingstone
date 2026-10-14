@@ -10,7 +10,7 @@ import ContactBanner from "@/components/shared/contact-banner";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Product design and frontend work by Courage Livingstone, from Tobams and freelance frontend to Hertechtrail, Tricode, ConnectTech, Synergy Book Club, and TechAscend.",
+    "Design operations, product design, and automotive production with Uche Livingstone: EN1 Technologies, Codematic.io, Oatomedia, Hertechtrail, and OWENICO CONSULT.",
 };
 
 export default function ExperiencePage() {
@@ -23,8 +23,8 @@ export default function ExperiencePage() {
           <h1 className="display mt-6 max-w-5xl text-[clamp(3.2rem,7.4vw,6.6rem)]">
             <MaskLines lines={["The work", "so far."]} />
           </h1>
-          <p className="load-rise load-d2 mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Three years of product design, plus frontend training and shipped interfaces. The roles below are the practice.
+          <p className="load-rise load-d2 mt-8 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            Design operations, product design, product management, and production. The roles below are the practice, including Codematic.io.
           </p>
         </PageWrapper>
       </section>
@@ -36,12 +36,12 @@ export default function ExperiencePage() {
               <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
                 <div className="sm:col-span-4">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
-                  <p className="mt-1 text-lg text-muted-foreground">{item.place}</p>
+                  <p className="mt-1 text-sm text-muted-foreground sm:text-base">{item.place}</p>
                 </div>
                 <div className="min-w-0 sm:col-span-8">
                   <h2 className="text-2xl tracking-[-0.04em]">{item.title}</h2>
-                  <p className="mt-0.5 text-lg text-muted-foreground">{item.org}</p>
-                  <p className="mt-2 max-w-2xl text-lg text-muted-foreground">{item.body}</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground sm:text-base">{item.org}</p>
+                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">{item.body}</p>
                 </div>
               </article>
             </Rise>
@@ -53,16 +53,16 @@ export default function ExperiencePage() {
         <PageWrapper>
           <Rise>
             <p className="kicker text-lime">Training</p>
-            <h2 className="display mt-4 text-4xl sm:text-5xl">Frontend, practiced.</h2>
+            <h2 className="display mt-4 text-4xl sm:text-5xl">Study, continued.</h2>
           </Rise>
           <div className="mt-10 grid items-stretch gap-4 md:grid-cols-2">
             {training.map((item) => (
-              <Rise key={item.org} className="h-full">
+              <Rise key={item.title} className="h-full">
                 <article className="panel flex h-full min-h-[14.5rem] flex-col p-6 sm:p-8">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
                   <h3 className="mt-4 text-2xl tracking-[-0.04em]">{item.title}</h3>
-                  <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
-                  <p className="mt-4 text-lg text-muted-foreground">{item.body}</p>
+                  <p className="mt-1 text-sm text-muted-foreground sm:text-base">{item.org}</p>
+                  <p className="mt-4 text-sm text-muted-foreground sm:text-base">{item.body}</p>
                 </article>
               </Rise>
             ))}

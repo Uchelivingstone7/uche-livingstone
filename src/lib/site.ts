@@ -1,27 +1,24 @@
 export const site = {
-  name: "Courage Livingstone",
-  shortName: "CL",
-  role: "Product Designer × Frontend Developer",
-  email: "Couragelivingstone1@gmail.com",
-  url: "https://couragelivingstone.com",
+  name: "Uche Livingstone",
+  shortName: "UL",
+  role: "Design Operations Lead × Product Designer × Product Manager",
+  email: "uchelivingstone7@gmail.com",
+  url: "https://uchelivingstone.com",
   description:
-    "Courage Livingstone is a product designer and frontend developer in Lagos. He designs digital products and builds the interfaces behind them.",
-  availability: "Available for work",
+    "Uche Livingstone is a design operations lead, product designer, and product manager in Lagos. He turns research, production, and cross-functional work into clear products.",
+  availability: "Public speaking",
   availabilityNote:
-    "Available for freelance projects, collaborations, and frontend opportunities.",
-  statement: "I design digital products and build the interfaces behind them.",
+    "Delegate speaker at Tech Outlook on 20 October 2026. Open to talks on design operations, product design, and creative production.",
+  statement:
+    "I connect product design with the operations that get it made: research, prototypes, production, and the workflow around them.",
   location: "Lagos, Nigeria",
   nav: [
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
-    { href: "/services", label: "Services" },
+    { href: "/practice", label: "Practice" },
     { href: "/experience", label: "Experience" },
+    { href: "/publications", label: "Publications" },
     { href: "/contact", label: "Contact" },
   ],
-  socials: [
-    { href: "https://www.linkedin.com/in/couragecharles", label: "LinkedIn" },
-    { href: "https://www.behance.net/courageeze1", label: "Behance" },
-    { href: "https://github.com/couragecharles", label: "GitHub" },
-    { href: "https://x.com/Charlycourage", label: "X" },
-  ],
+  socials: [{ href: "https://www.linkedin.com/in/uchelivingstone/", label: "LinkedIn" }],
 } as const;

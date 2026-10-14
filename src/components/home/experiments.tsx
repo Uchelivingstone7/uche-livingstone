@@ -29,7 +29,7 @@ const Pipeline = () => {
                     ↓
                   </span>
                 ) : (
-                  <span className="ml-auto h-2 w-2 rounded-full bg-lime shadow-[0_0_12px_#c6f135]" />
+                  <span className="ml-auto h-2 w-2 rounded-full bg-lime shadow-[0_0_12px_#f0a45a]" />
                 )}
               </li>
             </Rise>

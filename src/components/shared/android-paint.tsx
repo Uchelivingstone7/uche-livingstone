@@ -37,9 +37,9 @@ const imageFor = (btn: HTMLElement, force: boolean) => {
   ctx.scale(ratio, ratio);
   ctx.beginPath();
   ctx.roundRect(0, 0, width, height, height / 2);
-  ctx.fillStyle = "#c6f135";
+  ctx.fillStyle = "#f0a45a";
   ctx.fill();
-  ctx.fillStyle = "#101408";
+  ctx.fillStyle = "#1c140c";
   ctx.font = font.font;
   if (font.letterSpacing && font.letterSpacing !== "normal") ctx.letterSpacing = font.letterSpacing;
   ctx.textAlign = "center";
@@ -64,7 +64,7 @@ const paintAll = (force: boolean) => {
     const url = imageFor(btn, force);
     if (!url) return;
     rules.push(
-      `${selectorFor(btn)}{background-color:#c6f135!important;background-image:url("${url}")!important;background-repeat:no-repeat!important;background-size:100% 100%!important}`,
+      `${selectorFor(btn)}{background-color:#f0a45a!important;background-image:url("${url}")!important;background-repeat:no-repeat!important;background-size:100% 100%!important}`,
     );
   });
   style.textContent = rules.join("");

@@ -1,13 +1,14 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib";
 
 const lines = [
-  { text: "I design products", accent: "" },
-  { text: "and build them", accent: "build them" },
-  { text: "for the web.", accent: "" },
+  { text: "I lead design", accent: "" },
+  { text: "and the systems", accent: "systems" },
+  { text: "behind it.", accent: "" },
 ];
 
 const total = lines.reduce((sum, line) => sum + line.text.length, 0);
@@ -121,64 +122,71 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-72">
-      <div className="hero-wash hero-wash-a" />
-      <div className="hero-wash hero-wash-b" />
-      <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 opacity-40" />
-      <div aria-hidden className="hero-scan pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="hero-wash hero-wash-a hero-wash-stage" />
 
       <div className="width-layout relative z-10">
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
-        <div
-          aria-hidden
-          data-hero-circle
-          className="pointer-events-none absolute top-[calc(50%+2.75rem)] left-1/2 h-[min(96vw,38rem)] w-[min(96vw,38rem)] -translate-x-1/2 -translate-y-1/2"
-        >
-          <div className="absolute inset-0 rounded-full border border-white/15" />
-          <div className="orbit absolute inset-[7%] rounded-full border border-dashed border-lime/45">
-            <span className="absolute top-0 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime shadow-[0_0_14px_#c6f135]" />
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          <div data-hero-copy className="min-w-0 lg:col-span-7">
+            <p className="kicker text-lime">{site.role}</p>
+            <h1
+              className={`display mt-4 text-[clamp(2.8rem,5vw,4.15rem)] leading-[1.02] text-foreground sm:leading-[0.9]${mode === "type" ? " hero-write" : ""}`}
+              data-typing={mode}
+            >
+              {lines.map((line, index) => (
+                <Line
+                  key={line.text}
+                  text={line.text}
+                  accent={line.accent}
+                  count={mode === "type" ? revealed(index, typed) : line.text.length}
+                  caret={caretLine === index ? caretAt : null}
+                />
+              ))}
+            </h1>
+            <p className="mt-5 max-w-md text-sm text-muted-foreground sm:text-base">{site.statement}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link
+                href="/work"
+                className="btn-lime inline-flex rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                <span className="btn-ink">View my work</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex rounded-full border border-white/15 px-5 py-2.5 text-sm transition-colors hover:border-lime/40 hover:text-lime"
+              >
+                Let&apos;s work together
+              </Link>
+            </div>
           </div>
-          <div className="orbit-rev absolute inset-[16%] rounded-full border border-white/10">
-            <span className="absolute top-1/2 left-0 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/70" />
-          </div>
+
+          <Link href="/about" className="group panel relative block overflow-hidden lg:col-span-5">
+            <div className="relative aspect-[4/5] bg-[#101010]">
+              <Image
+                src="/images/uche/Profile.jpeg"
+                alt="Uche Livingstone"
+                fill
+                priority
+                quality={90}
+                sizes="(min-width: 1024px) 560px, 90vw"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-4 px-4 py-3.5 sm:px-5">
+              <div className="min-w-0">
+                <p className="truncate text-sm tracking-[-0.03em]">Uche Livingstone</p>
+                <p className="kicker mt-1">Design operations × product × management</p>
+              </div>
+            </div>
+          </Link>
         </div>
 
-        <div data-hero-copy className="relative w-full">
-          <p className="kicker text-lime">{site.role}</p>
-          <h1
-            className={`display mt-3 text-[clamp(2.8rem,5vw,4.15rem)] leading-[1.02] text-foreground sm:leading-[0.9]${mode === "type" ? " hero-write" : ""}`}
-            data-typing={mode}
-          >
-            {lines.map((line, index) => (
-              <Line
-                key={line.text}
-                text={line.text}
-                accent={line.accent}
-                count={mode === "type" ? revealed(index, typed) : line.text.length}
-                caret={caretLine === index ? caretAt : null}
-              />
-            ))}
-          </h1>
-          <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground sm:text-base">{site.statement}</p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/work"
-              className="btn-lime inline-flex rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              <span className="btn-ink">View my work</span>
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex rounded-full border border-white/15 px-5 py-2.5 text-sm transition-colors hover:border-lime/40 hover:text-lime"
-            >
-              Let&apos;s work together
-            </Link>
-          </div>
+        <div className="mt-10 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
+          <p className="font-mono text-[10px] tracking-[0.22em] text-foreground/70 uppercase">{site.location}</p>
+          <a href="#about" className="scroll-cue font-mono text-[10px] tracking-[0.22em] text-foreground/70 uppercase">
+            Scroll to explore ↓
+          </a>
         </div>
-        <a href="#about" className="scroll-cue relative z-10 mt-8 font-mono text-[10px] tracking-[0.22em] text-foreground/70 uppercase">
-          Scroll to explore ↓
-        </a>
-      </div>
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ const SectionSlider = ({ slides }: Props) => {
               <div className="relative aspect-[16/10] overflow-hidden border border-white/15 bg-card">
                 <Image
                   src={slide.src}
-                  alt={`StreamVibe ${slide.label}`}
+                  alt={slide.label}
                   fill
                   quality={90}
                   draggable={false}

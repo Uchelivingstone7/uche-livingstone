@@ -1,34 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ease } from "@/lib/motion";
 import { cn, navProjects, site } from "@/lib";
+import Logo from "@/components/brand/logo";
 import ProjectMedia from "@/components/work/project-media";
 
 const Navbar = () => {
   const pathname = usePathname();
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [workOpen, setWorkOpen] = useState(false);
-  const [preview, setPreview] = useState(0);
-  const [hovered, setHovered] = useState<string | null>(null);
+  const [preview, setPreview] = useState<number | null>(null);
+  const settled = useRef<number | null>(null);
+  const settleTimer = useRef(0);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const chooseProject = (index: number) => {
+    setPreview(index);
+    window.clearTimeout(settleTimer.current);
+    settleTimer.current = window.setTimeout(() => {
+      settled.current = index;
+    }, 160);
+  };
+
+  const closeWork = () => {
+    window.clearTimeout(settleTimer.current);
+    setPreview(settled.current);
+    setWorkOpen(false);
+  };
 
   useEffect(() => {
     setOpen(false);
     setWorkOpen(false);
   }, [pathname]);
+
+  useEffect(() => () => window.clearTimeout(settleTimer.current), []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -46,67 +55,43 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const currentNav = navProjects[preview] ?? navProjects[0];
+  const currentNav = navProjects[preview ?? 0] ?? navProjects[0];
 
   const active = (href: string) =>
     href === "/work" ? pathname.startsWith("/work") : pathname === href;
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50">
-        <div className="width-layout">
-        <div
-          data-filled={scrolled || open || workOpen ? "true" : "false"}
-          className={cn(
-            "flex h-16 items-center justify-between gap-4 border transition-all duration-300 md:h-[4.25rem]",
-            scrolled || open || workOpen
-              ? "mt-3 rounded-full border-white/10 bg-background px-4 shadow-[0_18px_50px_rgba(0,0,0,0.55)] sm:px-6"
-              : "border-transparent bg-transparent",
-          )}
-        >
-          <Link href="/" aria-label="Courage Livingstone, home" className="group flex items-center gap-3 outline-none">
-            <span className="relative grid h-12 w-12 place-items-center">
-              <span className="logo-ring absolute inset-0 rounded-full border border-dashed border-lime/60" />
-              <Image
-                src="/images/logo-cl.png"
-                alt=""
-                width={48}
-                height={48}
-                priority
-                className="relative h-11 w-11 object-contain transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
-              />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur-md">
+        <div className="width-layout flex h-16 items-center justify-between gap-4 md:h-[4.25rem]">
+          <Link href="/" aria-label="Uche Livingstone, home" className="group flex shrink-0 items-center gap-3 outline-none">
+            <span className="relative grid h-10 w-10 place-items-center">
+              <Logo className="relative h-9 w-9 transition-transform duration-500 group-hover:scale-105" />
             </span>
             <span className="hidden text-sm tracking-[-0.03em] sm:block">{site.name}</span>
           </Link>
 
-          <nav
-            aria-label="Primary"
-            className="hidden items-center gap-1 lg:flex"
-            onMouseLeave={() => setHovered(null)}
-          >
+          <nav aria-label="Primary" className="hidden items-center lg:flex">
             {site.nav.map((item) =>
               item.href === "/work" ? (
                 <div
                   key={item.href}
                   className="relative"
-                  onMouseEnter={() => {
-                    setWorkOpen(true);
-                    setHovered(item.href);
+                  onMouseEnter={() => setWorkOpen(true)}
+                  onMouseLeave={closeWork}
+                  onFocus={() => setWorkOpen(true)}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget)) closeWork();
                   }}
-                  onMouseLeave={() => setWorkOpen(false)}
                 >
                   <Link
                     href={item.href}
                     data-active={active(item.href) ? "true" : "false"}
-                    className="nav-link relative z-0 px-3 py-2 text-sm text-foreground/80 outline-none hover:text-foreground"
+                    className={cn(
+                      "nav-link px-2.5 py-2 text-[13px] text-foreground/75 outline-none hover:text-foreground",
+                      (active(item.href) || workOpen) && "text-foreground",
+                    )}
                   >
-                    {hovered === item.href || (!hovered && active(item.href)) ? (
-                      <motion.span
-                        layoutId="nav-pill"
-                        className="absolute inset-0 -z-10 rounded-full bg-lime/10"
-                        transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                      />
-                    ) : null}
                     {item.label}
                   </Link>
                   <AnimatePresence>
@@ -116,30 +101,31 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={reduce ? undefined : { opacity: 0, y: 6 }}
                         transition={{ duration: 0.28, ease }}
-                        className="absolute top-full left-1/2 z-50 w-[min(44rem,calc(100vw-2.5rem))] -translate-x-1/2 pt-5"
+                        className="absolute top-full left-0 z-50 w-[min(34rem,calc(100vw-2.5rem))] pt-4"
                       >
-                        <div className="panel grid grid-cols-[1.15fr_0.85fr] items-stretch gap-3 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+                        <div className="panel grid grid-cols-[9.5rem_minmax(0,1fr)] items-start gap-2 p-2.5 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
                           <Link
                             href={`/work/${currentNav.slug}`}
-                            className="relative min-h-[16rem] overflow-hidden rounded-2xl"
+                            className="relative aspect-[4/3] overflow-hidden rounded-xl"
                           >
                             <ProjectMedia
                               cover={currentNav.cover}
                               title={currentNav.title}
-                              className="absolute inset-0 h-full w-full !aspect-auto rounded-2xl border-0"
-                              imageClassName="!object-cover object-center"
+                              className="absolute inset-0 h-full w-full !aspect-auto rounded-xl border-0"
+                              imageClassName="!object-cover object-top"
                             />
                           </Link>
-                          <ul className="flex flex-col justify-center py-1">
+                          <ul className="flex flex-col items-stretch justify-start py-0.5 text-left">
                             {navProjects.map((project, index) => (
-                              <li key={project.slug}>
+                              <li key={project.slug} className="w-full">
                                 <Link
                                   href={`/work/${project.slug}`}
-                                  onMouseEnter={() => setPreview(index)}
-                                  onFocus={() => setPreview(index)}
+                                  onMouseEnter={() => chooseProject(index)}
+                                  onFocus={() => chooseProject(index)}
+                                  aria-current={index === preview ? "true" : undefined}
                                   className={cn(
-                                    "block rounded-xl px-3 py-1.5 text-sm transition-colors",
-                                    index === preview ? "bg-white/5 text-lime" : "text-foreground/75 hover:text-foreground",
+                                    "block w-full rounded-lg px-3 py-1.5 text-left text-sm leading-snug transition-colors",
+                                    index === preview ? "text-foreground" : "text-foreground/75 hover:text-foreground",
                                   )}
                                 >
                                   {project.title}
@@ -157,16 +143,11 @@ const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   data-active={active(item.href) ? "true" : "false"}
-                  onMouseEnter={() => setHovered(item.href)}
-                  className="nav-link relative z-0 px-3 py-2 text-sm text-foreground/80 outline-none hover:text-foreground"
+                  className={cn(
+                    "nav-link px-2.5 py-2 text-[13px] text-foreground/75 outline-none hover:text-foreground",
+                    active(item.href) && "text-foreground",
+                  )}
                 >
-                  {hovered === item.href || (!hovered && active(item.href)) ? (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-lime/10"
-                      transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                    />
-                  ) : null}
                   {item.label}
                 </Link>
               ),
@@ -175,7 +156,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-3 sm:gap-5">
             <p className="hidden items-center gap-2 text-xs text-foreground/70 xl:flex">
-              <span className="status-dot h-1.5 w-1.5 rounded-full bg-lime shadow-[0_0_10px_#c6f135]" />
+              <span className="status-dot h-1.5 w-1.5 rounded-full bg-lime shadow-[0_0_10px_#f0a45a]" />
               {site.availability}
             </p>
             <Link
@@ -194,7 +175,6 @@ const Navbar = () => {
               {open ? "Close" : "Menu"}
             </button>
           </div>
-        </div>
         </div>
       </header>
 
@@ -225,7 +205,7 @@ const Navbar = () => {
             </ul>
             <div className="space-y-5">
               <div className="flex min-w-0 touch-pan-x gap-2 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {navProjects.map((project) => (
+                {navProjects.map((project, index) => (
                   <Link
                     key={project.slug}
                     href={`/work/${project.slug}`}

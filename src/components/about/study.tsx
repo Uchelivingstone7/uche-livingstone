@@ -89,7 +89,7 @@ const Study = () => {
                   >
                     <span>
                       <span className="block text-2xl tracking-[-0.04em]">{item.title}</span>
-                      <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
+                      <span className="mt-1 block text-sm text-muted-foreground sm:text-base">{item.org}</span>
                     </span>
                     <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">
                       {item.dates}
@@ -120,7 +120,7 @@ const Study = () => {
                     >
                       <span>
                         <span className="block text-2xl tracking-[-0.04em]">{item.title}</span>
-                        <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
+                        <span className="mt-1 block text-sm text-muted-foreground sm:text-base">{item.org}</span>
                       </span>
                       <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">
                         {item.dates}

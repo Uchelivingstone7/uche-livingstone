@@ -24,7 +24,7 @@ const ProjectCard = ({ project, className, priority = false }: Props) => {
           <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
           <span className="text-sm text-muted-foreground">{project.year}</span>
         </div>
-        <p className="text-sm text-muted-foreground">{project.summary}</p>
+        <p className="text-sm text-muted-foreground sm:text-base">{project.summary}</p>
         <p className="text-sm font-medium text-foreground/80">{project.role}</p>
       </div>
     </Link>

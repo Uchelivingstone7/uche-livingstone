@@ -24,7 +24,7 @@ export default async function ContactSuccessPage() {
       <PageWrapper className="relative max-w-3xl">
         <p className="kicker text-lime">Sent</p>
         <h1 className="display mt-5 text-[clamp(3rem,7vw,5.5rem)]">Thanks. I have your note.</h1>
-        <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+        <p className="mt-6 max-w-xl text-sm text-muted-foreground sm:text-base">
           I’ll reply to the email you shared, usually within two working days.
           If it’s urgent, write directly to {site.email}.
         </p>

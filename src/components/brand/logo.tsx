@@ -6,23 +6,22 @@ type Props = {
 
 const Logo = ({ className }: Props) => {
   return (
-    <svg
-      viewBox="0 0 40 40"
-      aria-hidden
-      className={cn("h-9 w-9 text-foreground", className)}
-    >
-      <rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="currentColor" />
+    <svg viewBox="0 0 48 48" aria-hidden className={cn("h-9 w-9", className)}>
+      <rect width="48" height="48" rx="14" fill="#f0a45a" />
       <path
-        d="M17.5 12.5a6 6 0 0 0-6 6.2c0 3.6 2.5 6.3 6 6.3"
+        d="M15 15v11.5a6.5 6.5 0 0 0 13 0V15"
         fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
+        stroke="#1c140c"
+        strokeWidth="2.6"
+        strokeLinecap="round"
       />
       <path
-        d="M22 12.5V27h8"
+        d="M32 15v16h8"
         fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
+        stroke="#1c140c"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

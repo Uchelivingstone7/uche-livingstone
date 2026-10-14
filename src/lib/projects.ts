@@ -33,787 +33,440 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "streamvibe",
-    title: "StreamVibe",
+    slug: "geoplex",
+    title: "Geoplex",
     year: "2026",
-    label: "Product design · Frontend development",
+    label: "Product design · Corporate",
     summary:
-      "StreamVibe is a movie and TV app I designed and built. You browse movies and shows, open a title, compare plans, and watch, all in one Next.js product.",
-    cover: "/images/streamvibe/home.png",
-    tags: ["Next.js", "React", "TMDB API", "Tailwind CSS", "Product design"],
-    design: ["UX", "User flows", "UI design", "Responsive layouts", "Design system"],
-    development: ["Next.js", "React", "Tailwind CSS", "API integration", "Responsive implementation"],
-    role: "Product Designer × Frontend Developer",
-    services: ["Product design", "Design system", "Frontend"],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "TMDB API"],
-    challenge:
-      "Finding a film, reading about it, choosing a plan, and pressing play were starting to feel like different products. StreamVibe needed one clear path from the home page to the player.",
-    approach:
-      "I designed that path first, then built the screens in Next.js. Movies and shows stay in their own catalogs. Prices, posters, and headings use the same type and colors on the marketing pages and inside the app.",
-    outcome:
-      "StreamVibe is a working app. The home page shows its hero before the rest of the page loads. A movie link that actually belongs to a show sends you to the show. Trailers play on the page, and Escape closes them.",
-    build:
-      "The app uses the Next.js App Router. Film and show data comes from the TMDB API. The home page is cached and refreshed every six hours so the hero can appear first. On a phone, the desktop row of trailer players is not loaded.",
-    highlights: [
-      "Designed the path from browsing to playback before building the screens",
-      "Kept movies and shows as two catalogs that still look like one product",
-      "Used one set of type, colors, prices, and posters across the marketing pages and the app",
-      "Loaded the home hero first so the page feels ready straight away",
-    ],
-    screens: [
-      {
-        cover: "/images/streamvibe/home.png",
-        label: "Home",
-        caption: "The home page leads with a featured title and a search, so you can start watching or keep looking.",
-      },
-      {
-        cover: "/images/streamvibe/title.png",
-        label: "Movies & Shows",
-        caption: "Movies & Shows opens on a featured title, with the rest of the catalog one step away.",
-      },
-      {
-        cover: "/images/streamvibe/watch.png",
-        label: "Watch",
-        caption: "Playback is the last step. The trailer plays on the same page.",
-      },
-      {
-        cover: "/images/streamvibe/plans.png",
-        label: "Plans",
-        caption: "The plans use the same type, buttons, and layout as the rest of the app.",
-      },
-      {
-        cover: "/images/streamvibe/movies.png",
-        label: "Catalog",
-        caption: "Movies has its own list, separate from shows.",
-      },
-      {
-        cover: "/images/streamvibe/browse-web.png",
-        label: "Browse",
-        caption: "Browse keeps the home layout while you look through more titles.",
-      },
-    ],
-    system: {
-      typeface: "Manrope",
-      colors: [
-        { name: "Field", value: "#141414" },
-        { name: "Type", value: "#FFFFFF" },
-        { name: "Muted", value: "#999999" },
-        { name: "Action", value: "#E50000" },
-        { name: "Card", value: "#0F0F0F" },
-        { name: "Border", value: "#262626" },
-      ],
-    },
-  },
-  {
-    slug: "tobams",
-    title: "Tobams Group",
-    year: "2026",
-    label: "Product design · Team",
-    summary:
-      "Tobams Group is a UK company for talent and digital consulting. I joined as Associate Product Designer. The website is a team product, and this page walks through the live site.",
-    cover: "/images/tobams/live-home.jpg",
-    live: "https://www.tobamsgroup.com/",
-    tags: ["Product design", "Website", "Talent", "Team"],
-    design: ["Homepage", "About", "Jobs", "Information hierarchy"],
-    development: [],
-    role: "Associate Product Designer",
-    services: ["Product design", "UX/UI"],
-    stack: ["Figma", "DM Sans"],
-    challenge:
-      "People landing on the site needed a quick answer to three questions: who Tobams Group is, what the company offers, and how to apply or get in touch.",
-    approach:
-      "I worked with the design team on the live site. This case study covers the pages visitors meet first: home, about, jobs, products, consultation, pricing, and projects. I also worked with the team on the voting and competition flow for Tobams × Access.",
-    outcome:
-      "tobamsgroup.com introduces the company in one place: the work, the products, the open roles, and a way to book a consultation.",
-    build:
-      "I contributed as Associate Product Designer. I did not design or build this site alone. The screens here are from the live company website.",
-    highlights: [
-      "Joined the team as Associate Product Designer on the live site",
-      "Home, about, and jobs explain the company and how to join",
-      "Worked with the team on the voting and competition process for Tobams × Access",
-      "The live site is set in DM Sans",
-    ],
-    screens: [
-      {
-        cover: "/images/tobams/live-home.jpg",
-        label: "Homepage",
-        caption: "The live homepage introduces Tobams Group and what the company does.",
-      },
-      {
-        cover: "/images/tobams/live-about.jpg",
-        label: "About",
-        caption: "About explains who the company is and the talent work behind the brand.",
-      },
-      {
-        cover: "/images/tobams/live-jobs.jpg",
-        label: "Jobs",
-        caption: "Jobs lists open roles, including product design, on the same site.",
-      },
-      {
-        cover: "/images/tobams/live-products.jpg",
-        label: "Products",
-        caption: "Products shows the AI-driven assessment tools and the rest of the range.",
-      },
-      {
-        cover: "/images/tobams/live-consult.jpg",
-        label: "Consultation",
-        caption: "Consultation is the contact path for booking time with the team.",
-      },
-      {
-        cover: "/images/tobams/live-pricing.jpg",
-        label: "Pricing",
-        caption: "Pricing sets out the plans on tobamsgroup.com.",
-      },
-      {
-        cover: "/images/tobams/live-projects.jpg",
-        label: "Projects",
-        caption: "Projects highlights work from the live company site.",
-      },
-    ],
-    system: {
-      typeface: "DM Sans",
-      colors: [
-        { name: "Paper", value: "#FFFFFF" },
-        { name: "Ink", value: "#1A1024" },
-        { name: "Plum", value: "#5B1D6A" },
-        { name: "Rose", value: "#E11D48" },
-        { name: "Muted", value: "#6B6375" },
-        { name: "Line", value: "#E8E4EC" },
-      ],
-    },
-  },
-  {
-    slug: "rlkids",
-    title: "RLkids",
-    year: "2026",
-    label: "Product design · Team",
-    summary:
-      "RLkids is an AI learning product for children aged 7 to 14. I worked with the team on stories, games, and lesson paths that teach real-world skills.",
-    cover: "/images/rlkids/live-home.jpg",
-    live: "https://rlkids.ai/",
-    tags: ["Product design", "EdTech", "AI", "Team"],
-    design: ["Homepage", "Learning paths", "Series catalog", "App surfaces"],
+      "Geoplex Drillteq is an indigenous oilfield services company. The site has to make a technical business readable: who they are, what they operate, and why a partner would trust them.",
+    cover: "/images/geoplex/home.png",
+    tags: ["Product design", "Corporate", "Energy", "Information architecture"],
+    design: ["Information architecture", "Service structure", "Visual hierarchy", "Content design"],
     development: [],
     role: "Product Designer",
-    services: ["Product design", "UX/UI"],
+    services: ["Product design", "UX", "Content structure"],
     stack: ["Figma"],
     challenge:
-      "Children needed a way to learn leadership, AI, money, and strategy that felt like a game, not a classroom worksheet.",
+      "Oilfield services are dense. A visitor still needs a clear path from the company story to the work they actually buy: drilling, wireline, well construction, and partnerships.",
     approach:
-      "I worked with the team on Recycled Learning for Kids. The product uses story series, short games, and an AI path that moves at each child's pace. The site and the app share one journey: pick a series, read or play, and see progress.",
+      "I structured the experience around the questions a partner asks first. Who leads. What the company operates. Which services are core. Proof sits next to the claim, not in a separate archive the reader has to hunt for.",
     outcome:
-      "rlkids.ai is live. Families can browse the series, compare Read and Read + Play plans, and open an app with books, badges, and progress in one place.",
+      "Geoplex reads as an operating company, not a brochure. Services, leadership, and the African energy context are available without a long hunt.",
     build:
-      "This is a team product. I did not build it alone. The screens below are from the live site and app.",
+      "Product design for the public site at geoplex.com. The live pages are the reference for structure, hierarchy, and how a technical offer is introduced.",
     highlights: [
-      "A team product for children aged 7 to 14",
-      "Stories and games carry lessons in AI, leadership, money, and strategy",
-      "Each child gets a path that follows their pace",
-      "The site and the app share series, pricing, badges, and progress",
+      "A first screen that states the company before the service list",
+      "Core services grouped so drilling, wireline, and well work stay distinct",
+      "Leadership and partnerships treated as trust, not filler",
+      "A tone that stays technical without becoming a catalogue",
     ],
     screens: [
       {
-        cover: "/images/rlkids/live-home.jpg",
-        label: "Homepage",
-        caption: "The homepage explains RLkids: AI-powered learning for children, through stories and games.",
+        cover: "/images/geoplex/home.png",
+        label: "Home",
+        caption: "The first screen names the rig and the company before the service list.",
       },
       {
-        cover: "/images/rlkids/live-features.jpg",
-        label: "Learning model",
-        caption: "The learning model combines AI paths, 162 life-skills series, and short games.",
+        cover: "/images/geoplex/lower.png",
+        label: "Services",
+        caption: "Core engineering services stay grouped: oilfield, well construction, FPSO, and drilling.",
       },
       {
-        cover: "/images/rlkids/live-devices.jpg",
+        cover: "/images/geoplex/about.png",
+        label: "Company",
+        caption: "The company page carries who Geoplex is, separate from the service catalogue.",
+      },
+      {
+        cover: "/images/geoplex/services.png",
+        label: "Oilfield",
+        caption: "A service page stays on one offer, with the work shown beside the explanation.",
+      },
+      {
+        cover: "/images/geoplex/cover.png",
+        label: "News",
+        caption: "The home carousel opens on a rig, then a row of company news.",
+      },
+      {
+        cover: "/images/geoplex/next.png",
+        label: "Field",
+        caption: "An aerial of a working site sits with the company story.",
+      },
+    ],
+    live: "https://www.geoplex.com/",
+    system: {
+      typeface: "Editorial sans",
+      colors: [
+        { name: "Ink", value: "#12161c" },
+        { name: "Paper", value: "#f4f1ea" },
+        { name: "Copper", value: "#f0a45a" },
+        { name: "Field", value: "#1c2430" },
+        { name: "Line", value: "#d9d3c8" },
+        { name: "Muted", value: "#6e675e" },
+      ],
+    },
+  },
+  {
+    slug: "havara",
+    title: "Havara",
+    year: "2025",
+    label: "Product design · Hospitality · Team",
+    summary:
+      "Havara is a collection of residences in Ikoyi and a beach house in Ilashe. The site has to feel like the place: quiet, specific, and easy to reserve. Team project.",
+    cover: "/images/havara/stay.png",
+    tags: ["Product design", "Hospitality", "Brand", "Lagos"],
+    design: ["Art direction", "Page narrative", "Enquiry flow", "Photography layout"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX/UI", "Content structure"],
+    stack: ["Figma"],
+    challenge:
+      "A residence sells an atmosphere. The page still has to answer practical questions: what the house is, where it sits, and how to take the next step.",
+    approach:
+      "I kept the story visual and the actions few. The house leads. Practical details sit close enough that a guest does not have to leave the mood to find them.",
+    outcome:
+      "Havara presents as a place first and a listing second. The enquiry is part of the page, not an afterthought.",
+    build:
+      "Product design for the public site at havara.com. Layout, pacing, and the path from the first image to an enquiry.",
+    highlights: [
+      "Ikoyi residences and the Ilashe beach house stay in one story",
+      "Photography carries the hierarchy",
+      "Enquiry stays available without breaking the page",
+      "The tone stays quiet, in line with a private house",
+    ],
+    screens: [
+      {
+        cover: "/images/havara/stay.png",
+        label: "Home",
+        caption: "The home page opens on a residence in Ikoyi and the beach house in Ilashe.",
+      },
+      {
+        cover: "/images/havara/residences.png",
+        label: "Residences",
+        caption: "The residences page steps into the Ikoyi homes, one interior at a time.",
+      },
+      {
+        cover: "/images/havara/beach.png",
+        label: "Beach house",
+        caption: "The beach house has its own page, so Ilashe is not folded into the city stays.",
+      },
+      {
+        cover: "/images/havara/contact.png",
+        label: "Contact",
+        caption: "The enquiry sits on a page that still looks like the house, not a form on a blank sheet.",
+      },
+      {
+        cover: "/images/havara/next.png",
+        label: "Welcome",
+        caption: "The welcome names the Ikoyi residences and the Ilashe beach house together.",
+      },
+      {
+        cover: "/images/havara/gallery.png",
+        label: "Houses",
+        caption: "Each house is named, with its neighbourhood and how many rooms it has.",
+      },
+    ],
+    live: "https://www.havara.com/",
+    system: {
+      typeface: "Editorial serif",
+      colors: [
+        { name: "Sand", value: "#e7dcc8" },
+        { name: "Ink", value: "#1a1612" },
+        { name: "Sea", value: "#1e4d5a" },
+        { name: "Shell", value: "#f7f1e6" },
+        { name: "Copper", value: "#c4844a" },
+        { name: "Line", value: "#ddd4c4" },
+      ],
+    },
+  },
+  {
+    slug: "conviso",
+    title: "Conviso",
+    year: "2025",
+    label: "Product design · SaaS",
+    summary:
+      "Conviso is a behavioural messaging product. Teams use it to turn signups into paying customers with email, WhatsApp, and push, without a stack of separate tools.",
+    cover: "/images/conviso/home.png",
+    tags: ["Product design", "SaaS", "Messaging", "Growth"],
+    design: ["Product narrative", "Interface hierarchy", "Journey explanation", "Marketing site"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX", "Interface design"],
+    stack: ["Figma"],
+    challenge:
+      "The product watches behaviour and sends the next message. That loop is easy to over-explain. A growth team still needs to see what they set up, what fires, and what they learn.",
+    approach:
+      "I framed the product as one loop: define the moment, let the trigger fire, then read what worked. Channels (email, WhatsApp, push) sit inside that loop instead of as a feature list.",
+    outcome:
+      "Conviso’s site explains a technical product in the order a team would use it, from the promise to the workflow to the proof.",
+    build:
+      "Product design for the public product at conviso.ai. The page structure follows the automation loop the product actually runs.",
+    highlights: [
+      "One loop: define, trigger, learn",
+      "Email, WhatsApp, and push shown as channels inside the product, not three products",
+      "The first screen states the outcome: signups that become customers",
+      "Proof and pricing sit after the workflow is clear",
+    ],
+    screens: [
+      {
+        cover: "/images/conviso/home.png",
+        label: "Home",
+        caption: "The first screen states the outcome, then shows the path from a quiet user back into the journey.",
+      },
+      {
+        cover: "/images/conviso/loop.png",
+        label: "How it works",
+        caption: "The loop is three steps: define the moment, let the trigger fire, then read what worked.",
+      },
+      {
+        cover: "/images/conviso/channels.png",
+        label: "Channels",
+        caption: "Email, WhatsApp, SMS, and push sit as channels around one product, not as separate tools.",
+      },
+      {
+        cover: "/images/conviso/product.png",
+        label: "Product",
+        caption: "Further down, the workspace is on the page: people, segments, campaigns, and messages sent.",
+      },
+      {
+        cover: "/images/conviso/cover.png",
+        label: "Promise",
+        caption: "A darker first screen states the promise: engagement that brings people back.",
+      },
+      {
+        cover: "/images/conviso/next.png",
+        label: "Rules",
+        caption: "How it works starts with the rule a team sets, then the trigger.",
+      },
+    ],
+    live: "https://conviso.ai/",
+    system: {
+      typeface: "Geometric sans",
+      colors: [
+        { name: "Ink", value: "#0e1116" },
+        { name: "Paper", value: "#f6f3ee" },
+        { name: "Signal", value: "#f0a45a" },
+        { name: "Blue", value: "#1d4e89" },
+        { name: "Field", value: "#171b22" },
+        { name: "Line", value: "#e4ddd2" },
+      ],
+    },
+  },
+  {
+    slug: "okeyson",
+    title: "Okeyson",
+    year: "2025",
+    label: "Product design · Transport",
+    summary:
+      "Okeyson Transports is a Nigerian bus and logistics service. The site has to make booking a seat, sending a shipment, and finding a terminal feel straightforward.",
+    cover: "/images/okeyson/cover.png",
+    tags: ["Product design", "Transport", "Booking", "Lagos"],
+    design: ["Booking flow", "Information architecture", "Interface design", "Content structure"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX", "Interface design"],
+    stack: ["Figma"],
+    challenge:
+      "A traveller arrives with a route in mind. The page still has to carry the company, the terminals, and three jobs: book a seat, ship a package, or manage a booking.",
+    approach:
+      "I put the booking on the first screen, with shipment and check-in beside it. Terminals and the app sit further down, so the next step is visible without a second hunt.",
+    outcome:
+      "The public site reads as a booking service. A visitor can start a trip, find a terminal, or read the company without leaving the product.",
+    build:
+      "Product design for the public site at okeysontransports.com. The live pages are the reference for the booking, the terminals, and the company story.",
+    highlights: [
+      "Booking, shipment, and check-in sit on the first screen",
+      "Terminals are findable from the home page and from their own page",
+      "The app is shown as the same trip, not a separate product",
+      "About states the company: interstate transport and logistics in Nigeria",
+    ],
+    screens: [
+      {
+        cover: "/images/okeyson/cover.png",
+        label: "Booking",
+        caption: "The home page opens on the trip: one way or round trip, terminal, date, and passengers.",
+      },
+      {
+        cover: "/images/okeyson/routes.png",
         label: "App",
-        caption: "The app holds reading, quizzes, progress, and badges in one place.",
+        caption: "Further down, the phone shows the same booking, next to what passengers say and where the terminals are.",
       },
       {
-        cover: "/images/rlkids/live-waitlist.jpg",
-        label: "Product",
-        caption: "A learner home for the child, and a dashboard for the teacher.",
+        cover: "/images/okeyson/terminals.png",
+        label: "Terminals",
+        caption: "Each terminal has a place, a phone number, and a map, starting with Lagos.",
       },
       {
-        cover: "/images/rlkids/live-app.jpg",
-        label: "Series",
-        caption: "The catalog includes Think Sustainability, Think Finance, and the other series.",
-      },
-      {
-        cover: "/images/rlkids/live-pricing.jpg",
-        label: "Pricing",
-        caption: "Two plans: Read, or Read + Play & Learn.",
-      },
-      {
-        cover: "/images/rlkids/live-about.jpg",
+        cover: "/images/okeyson/about.png",
         label: "About",
-        caption: "About states the mission: real-world skills for a better future.",
+        caption: "The company page names the work: interstate transport, logistics, and charter services.",
+      },
+      {
+        cover: "/images/okeyson/contact.png",
+        label: "Contact",
+        caption: "The contact page offers a chat, a call, and the company details.",
+      },
+      {
+        cover: "/images/okeyson/fleet.png",
+        label: "Notes",
+        caption: "Passenger notes from routes such as Lagos to Enugu sit on the home page, under the booking.",
       },
     ],
+    live: "https://www.okeysontransports.com/en/home",
     system: {
-      typeface: "Poppins",
+      typeface: "Humanist sans",
       colors: [
-        { name: "Forest", value: "#0B3D2E" },
-        { name: "Leaf", value: "#2FA35A" },
-        { name: "Sun", value: "#F5C518" },
-        { name: "Blue", value: "#1B4F9A" },
-        { name: "Paper", value: "#EEF6EE" },
-        { name: "Ink", value: "#14201A" },
+        { name: "Ink", value: "#0f172a" },
+        { name: "Paper", value: "#ffffff" },
+        { name: "Blue", value: "#1d4ed8" },
+        { name: "Field", value: "#eef2ff" },
+        { name: "Mist", value: "#f3f4f8" },
+        { name: "Line", value: "#e5e7eb" },
       ],
     },
   },
   {
-    slug: "locepx",
-    title: "Locepx",
+    slug: "genflow",
+    title: "Genflow",
     year: "2026",
-    featured: false,
+    label: "Product design · AI · Team",
+    summary:
+      "Genflow is an early-access product for creative teams. It turns Google’s generative models into repeatable workflows a team can run without setting each one up from scratch. Team project.",
+    cover: "/images/genflow/cover.png",
+    tags: ["Product design", "AI", "Workflow", "Creative"],
+    design: ["Product narrative", "Interface hierarchy", "Workflow explanation", "Marketing site"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX", "Interface design"],
+    stack: ["Figma"],
+    challenge:
+      "The models are powerful and easy to scatter. A team still needs one place to define a workflow, run it, and keep the files.",
+    approach:
+      "I led with the job, not the model list. Use cases explain what a workflow is for. The steps separate who designs it from who runs it. The playground shows the product itself.",
+    outcome:
+      "Genflow reads as a team tool. The path runs from the promise, through the workflows, to a request for early access.",
+    build:
+      "Product design for the public site at usegenflow.io. The page introduces the workflows and shows the playground a team would actually use.",
+    highlights: [
+      "The first screen names the job: creative workflows in one place",
+      "Use cases stay specific: image and video, short-form, brand checks, translation",
+      "Setup and execution are split so someone who is not an engineer can run a workflow",
+      "The playground is the product, not a diagram of it",
+    ],
+    screens: [
+      {
+        cover: "/images/genflow/cover.png",
+        label: "Home",
+        caption: "The home page states the product: repeatable creative workflows on Google’s generative models.",
+      },
+      {
+        cover: "/images/genflow/workflows.png",
+        label: "Use cases",
+        caption: "Workflows are named by the job: text to image and video, short-form, and brand checks.",
+      },
+      {
+        cover: "/images/genflow/steps.png",
+        label: "How it works",
+        caption: "One person designs the workflow. The rest of the team runs it and collects the files.",
+      },
+      {
+        cover: "/images/genflow/access.png",
+        label: "Playground",
+        caption: "The playground is on the page: aspect ratio, prompt, and the images a run produces.",
+      },
+      {
+        cover: "/images/genflow/playground.png",
+        label: "Handoff",
+        caption: "The page splits the job: design the workflow, the team runs it, then the files are there.",
+      },
+      {
+        cover: "/images/genflow/early.png",
+        label: "Early access",
+        caption: "A team requests access with the company, the size of the work, and the use case.",
+      },
+    ],
+    live: "https://usegenflow.io/",
+    system: {
+      typeface: "Geometric sans",
+      colors: [
+        { name: "Ink", value: "#050505" },
+        { name: "Paper", value: "#ffffff" },
+        { name: "Blue", value: "#2f6bff" },
+        { name: "Field", value: "#141414" },
+        { name: "Line", value: "#2a2a2a" },
+        { name: "Muted", value: "#a1a1aa" },
+      ],
+    },
+  },
+  {
+    slug: "parentyn",
+    title: "Parentyn",
+    year: "2025",
     label: "Product design · Team",
     summary:
-      "Locepx helps organisations develop leaders. I worked with the team and did most of the product design, plus QA and UX research.",
-    cover: "/images/locepx/home.jpg",
-    live: "https://www.locepx.com/",
-    tags: ["Product design", "UX research", "QA", "Team"],
-    design: ["Homepage", "Programmes", "Corporate solutions", "Contact"],
+      "Parentyn helps a parent follow school updates and a child's digital activity from one product. Team project.",
+    cover: "/images/parentyn/home.png",
+    tags: ["Product design", "Parenting", "Education", "Team"],
+    design: ["Product narrative", "Information architecture", "Interface hierarchy", "Content structure"],
     development: [],
     role: "Product Designer",
-    services: ["Product design", "UX research", "QA"],
+    services: ["Product design", "UX", "Content structure"],
     stack: ["Figma"],
     challenge:
-      "A leader looking for a programme, and a company looking for a custom one, needed a clear way through the same site.",
+      "A parent is asked to watch two things at once: what a child does online, and what is happening at school. Those used to live in different places.",
     approach:
-      "This is a team project. I did most of the product design. I also did the QA and the UX research, checking the pages against how people look for a programme and ask for help.",
+      "I kept both jobs in one product story. Monitoring and school updates sit as sibling offers, and the first screen says what the parent can do before the feature list.",
     outcome:
-      "locepx.com opens on the programmes and a way to talk to the team. The programme list can be searched. Corporate solutions explains a programme built around the business.",
+      "Parentyn reads as one place for a parent. School news and digital activity are available without treating them as two products.",
     build:
-      "This is a team project. I did most of the design. I did not build the site alone. The screens are from the live site.",
+      "Product design for the public site at parentyn.com. The live pages introduce monitoring, school connection, and how a parent gets in touch.",
     highlights: [
-      "A team project where I did most of the product design",
-      "QA and UX research on the live pages",
-      "Home, programmes, and corporate solutions share one path",
-      "A clean, minimalist design with a simple, modern, and consistent visual style.",
+      "The first screen states the job: stay informed, and stay in control",
+      "Monitoring and school updates are sibling offers, not a single mixed page",
+      "Safety is explained in plain language a parent can scan",
+      "Contact stays short: support, a phone line, and a form",
     ],
     screens: [
       {
-        cover: "/images/locepx/home.jpg",
-        label: "Homepage",
-        caption: "The homepage introduces Locepx and points to the programmes.",
+        cover: "/images/parentyn/home.png",
+        label: "Home",
+        caption: "The first screen says stay informed and stay in control, with a path to sign up.",
       },
       {
-        cover: "/images/locepx/programmes.jpg",
-        label: "Programmes",
-        caption: "Programmes can be searched, then opened by focus area.",
+        cover: "/images/parentyn/products.png",
+        label: "Safety",
+        caption: "Further down, the page turns to a child's digital safety.",
       },
       {
-        cover: "/images/locepx/corporate.jpg",
-        label: "Corporate",
-        caption: "Corporate solutions explains a programme built around the business.",
-      },
-      {
-        cover: "/images/locepx/about.jpg",
+        cover: "/images/parentyn/about.png",
         label: "About",
-        caption: "About states why Locepx exists and how to explore the programmes.",
+        caption: "The about page introduces the product as a place for parents and schools.",
       },
       {
-        cover: "/images/locepx/contact.jpg",
+        cover: "/images/parentyn/monitoring.png",
+        label: "Monitoring",
+        caption: "Monitoring is its own offer: watch activity, then guide what happens next.",
+      },
+      {
+        cover: "/images/parentyn/education.png",
+        label: "Education",
+        caption: "School updates sit beside the monitoring, so a parent can follow the classroom too.",
+      },
+      {
+        cover: "/images/parentyn/contact.png",
         label: "Contact",
-        caption: "Contact is where a leader or a company sends a message.",
+        caption: "The contact page lists support, a phone line, and a short form.",
       },
     ],
+    live: "https://www.parentyn.com/",
     system: {
-      typeface: "Inter",
+      typeface: "Humanist sans",
       colors: [
-        { name: "Night", value: "#030711" },
-        { name: "Type", value: "#F8FAFC" },
-        { name: "Action", value: "#F15B07" },
-        { name: "Paper", value: "#FFFFFF" },
-        { name: "Ink", value: "#221D23" },
-      ],
-    },
-  },
-  {
-    slug: "exyra",
-    title: "Exyra",
-    year: "2025",
-    label: "AI · Crypto · Product design · Frontend",
-    summary:
-      "Exyra is an AI crypto product I designed and built. You can talk to an agent, connect a wallet, and see rewards without jumping between different tools.",
-    cover: "/images/exyra/live-home.jpg",
-    live: "https://exyra-lake.vercel.app/",
-    tags: ["AI", "Product design", "Frontend", "Crypto", "Figma", "React"],
-    design: ["Agent flows", "Wallet states", "Dark interface", "Reward moments"],
-    development: ["React", "Tailwind CSS", "Components from Figma"],
-    role: "Product Designer × Frontend Developer",
-    services: ["Product design", "UI", "Frontend"],
-    stack: ["React", "JavaScript", "Tailwind CSS", "Figma"],
-    challenge:
-      "A lot of crypto products explain the market and lose the person using them. Exyra had to make an agent, a wallet, and a reward feel like one conversation.",
-    approach:
-      "I designed the dark interface around the next thing someone might do: ask the agent, check the wallet, or look at a reward. Then I built the frontend in React from those Figma screens.",
-    outcome:
-      "The live interface keeps the agent, wallet, and rewards on one dark screen. Each state is labeled clearly enough to use on a phone.",
-    build:
-      "I built the frontend in React and Tailwind CSS from the Figma file. The components are shared, and the layout keeps the same structure on a phone and on a desktop.",
-    highlights: [
-      "Put the agent, the wallet, and rewards on one path",
-      "Designed the screens in Figma before writing the components",
-      "Built the frontend from those screens, not a separate version",
-      "Kept every state readable on a phone",
-    ],
-    screens: [
-      {
-        cover: "/images/exyra/live-home.jpg",
-        label: "Agent",
-        caption: "The agent is where you ask a question and see the result on the same screen.",
-      },
-      {
-        cover: "/images/exyra/live-wallet.jpg",
-        label: "Wallet",
-        caption: "Connect Wallet is part of the same product, not a separate app.",
-      },
-      {
-        cover: "/images/exyra/live-rewards.jpg",
-        label: "Rewards",
-        caption: "Rewards shows badges and tiers you have earned.",
-      },
-      {
-        cover: "/images/exyra/live-reward-system.jpg",
-        label: "Reward system",
-        caption: "The reward system names each tier, from Orbit and Aether to Nexus.",
-      },
-      {
-        cover: "/images/exyra/live-agents.jpg",
-        label: "Agents",
-        caption: "Explore Agents lets you pick which agent to use.",
-      },
-    ],
-    system: {
-      typeface: "Inter",
-      colors: [
-        { name: "Field", value: "#1C1C1C" },
-        { name: "Type", value: "#F5F5F5" },
-        { name: "Muted", value: "#8A8A8A" },
-        { name: "Action", value: "#FF7A45" },
-        { name: "Card", value: "#2A2A2A" },
-        { name: "Line", value: "#3A3A3A" },
-      ],
-    },
-  },
-  {
-    slug: "fraktia",
-    title: "Fraktia",
-    year: "2025",
-    label: "AI product · Team",
-    summary:
-      "Fraktia is an AI product for creating and launching agents. I worked with the team on the dashboard, the agent cards, and the reward states.",
-    cover: "/images/fraktia/interface.jpg",
-    tags: ["AI", "Product design", "Frontend", "Team"],
-    design: ["Agent cards", "Rewards", "Dashboard", "Interactive states"],
-    development: ["React", "Component states", "Responsive layout"],
-    role: "Product Designer × Frontend Developer",
-    services: ["UX/UI", "Product design", "Frontend"],
-    stack: ["Figma", "React", "Tailwind CSS"],
-    challenge:
-      "An agent product can look advanced and still be hard to use. Fraktia needed a dashboard where you can see the agent, the reward, and what to do next.",
-    approach:
-      "I worked with the team. We made the agent card the main piece of the interface, then built the dashboard around it. Hover, active, and reward states were designed before they were coded.",
-    outcome:
-      "Fraktia reads as one product: a dashboard of agents, a clear reward state, and controls that stay on the same screen.",
-    build:
-      "This is a team product. The interface is reusable React components. Each agent card has its own state, and the layout works from a phone to a desktop dashboard.",
-    highlights: [
-      "A team project, not a solo build",
-      "The agent card is the main piece of the interface",
-      "Hover, active, and reward states were designed before code",
-      "The dashboard stays quiet enough to scan",
-    ],
-    screens: [
-      {
-        cover: "/images/fraktia/interface.jpg",
-        label: "Builder",
-        caption: "The builder is where you design, configure, and launch an agent.",
-      },
-      {
-        cover: "/images/fraktia/builder-ui.jpg",
-        label: "Agents",
-        caption: "Agent cards sit next to the list of frameworks they use.",
-      },
-      {
-        cover: "/images/fraktia/core-live.jpg",
-        label: "Launch",
-        caption: "The same interface, shown in the Fraktia Core launch frame.",
-      },
-      {
-        cover: "/images/fraktia/beta.jpg",
-        label: "Beta",
-        caption: "Fraktia Core in beta, with the builder on screen.",
-      },
-      {
-        cover: "/images/fraktia/messier.jpg",
-        label: "Partnership",
-        caption: "The same system, shown in a partnership launch frame.",
-      },
-    ],
-    system: {
-      typeface: "Syne",
-      colors: [
-        { name: "Field", value: "#0A0A0A" },
-        { name: "Type", value: "#F5F5E8" },
-        { name: "Muted", value: "#8A8A7A" },
-        { name: "Lime", value: "#D4E157" },
-        { name: "Card", value: "#121210" },
-        { name: "Line", value: "#2A2A22" },
-      ],
-    },
-  },
-  {
-    slug: "stanbic",
-    title: "Stanbic Homepage Redesign",
-    year: "2026",
-    label: "Product design · UX/UI",
-    summary:
-      "An independent redesign concept for the Stanbic IBTC homepage. I focused on a clearer first screen, simpler navigation, and sections that separate personal banking, offers, and rates.",
-    cover: "/images/stanbic/hero.png",
-    tags: ["Product design", "UX/UI", "Banking", "Figma"],
-    design: ["Homepage", "Navigation", "Information hierarchy", "Responsive screens"],
-    development: [],
-    role: "Product Designer",
-    services: ["Product design", "UX/UI"],
-    stack: ["Figma"],
-    challenge:
-      "The bank homepage asked people to do too many things at once. Accounts, cards, loans, and rates were all competing for the first screen.",
-    approach:
-      "I treated this as my own concept, not the live bank site. The first screen is one promise and a way in. Products, rates, and stories come after someone knows where they are.",
-    outcome:
-      "The concept gives the homepage one headline, calmer navigation, and separate sections for personal banking, offers, and rates. It keeps the Stanbic blue.",
-    build:
-      "I designed it in Figma for desktop and the supporting screens. It is not a coded website, and it is not the live Stanbic site.",
-    highlights: [
-      "Started with one headline instead of a wall of products",
-      "Split personal banking, offers, and rates into their own sections",
-      "Kept the Stanbic blue and simplified the page",
-      "Designed the homepage as a path through the bank, not a brochure",
-    ],
-    screens: [
-      {
-        cover: "/images/stanbic/col-left.png",
-        label: "Hero",
-        caption: "The first screen states one promise and leaves room to choose where to go next.",
-      },
-      {
-        cover: "/images/stanbic/col-mid.png",
-        label: "Products",
-        caption: "Internet banking, cards, and accounts each get their own section.",
-      },
-      {
-        cover: "/images/stanbic/col-right.png",
-        label: "Rates",
-        caption: "Exchange rates and eNaira sit at the end of the page, after the products.",
-      },
-      {
-        cover: "/images/stanbic/hero.png",
-        label: "Homepage",
-        caption: "The hero and the product sections read as one path through the bank.",
-      },
-      {
-        cover: "/images/stanbic/board.png",
-        label: "Full page",
-        caption: "The full homepage on one board: hero, products, and rates.",
-      },
-    ],
-    system: {
-      typeface: "Inter",
-      colors: [
-        { name: "Blue", value: "#0033A0" },
-        { name: "Type", value: "#0F172A" },
-        { name: "Paper", value: "#FFFFFF" },
-        { name: "Gold", value: "#C4A35A" },
-        { name: "Muted", value: "#64748B" },
-        { name: "Line", value: "#E2E8F0" },
-      ],
-    },
-  },
-  {
-    slug: "styleloom",
-    title: "StyleLoom",
-    year: "2026",
-    label: "Ecommerce · Product design · Frontend",
-    summary:
-      "StyleLoom is a dark fashion store I designed and built. The shop, the product page, and the bag all lead to one action: add the piece you want.",
-    cover: "/images/styleloom/live-home.jpg",
-    live: "https://style-loom-umber.vercel.app/",
-    tags: ["Ecommerce", "Product design", "Frontend", "Fashion", "Figma"],
-    design: ["Homepage", "Shop listing", "Product page", "Design system"],
-    development: ["React", "Responsive layout"],
-    role: "Product Designer × Frontend Developer",
-    services: ["Product design", "Frontend", "UX/UI", "Design system"],
-    stack: ["Figma", "React"],
-    challenge:
-      "Fashion shops often shout. StyleLoom needed to stay quiet and still make it easy to find a piece, pick a size, and add it to the bag.",
-    approach:
-      "I designed the store as one system. The home page is editorial. The shop is a grid you can filter. The product page shows the piece, the size, and add to bag, and little else.",
-    outcome:
-      "StyleLoom is one dark store: a black background, cream type, a gold action, and photography that does the selling. The same look runs from home to the bag.",
-    build:
-      "I designed the home page, shop, product page, bag, and account screens as one system, then built the store in React so those screens ship together.",
-    highlights: [
-      "One editorial home page instead of a stack of banners",
-      "Filters sit beside the product grid",
-      "The product page asks for a size, then add to bag",
-      "Black, cream, and gold are the whole visual system",
-    ],
-    screens: [
-      {
-        cover: "/images/styleloom/live-home.jpg",
-        label: "Home",
-        caption: "Home opens with one editorial image, then leads into the shop.",
-      },
-      {
-        cover: "/images/styleloom/live-shop.jpg",
-        label: "Shop",
-        caption: "The shop lists collections and products on the same dark background.",
-      },
-      {
-        cover: "/images/styleloom/live-product.jpg",
-        label: "Product",
-        caption: "A product page shows one piece, the materials, and add to bag.",
-      },
-      {
-        cover: "/images/styleloom/live-cart.jpg",
-        label: "Cart",
-        caption: "The bag lists what you added and the next step to check out.",
-      },
-      {
-        cover: "/images/styleloom/live-contact.jpg",
-        label: "Contact",
-        caption: "Contact keeps the same type and colors as the shop.",
-      },
-      {
-        cover: "/images/styleloom/live-orders.jpg",
-        label: "Orders",
-        caption: "Orders is where you track a package and see past purchases.",
-      },
-      {
-        cover: "/images/styleloom/live-womens.jpg",
-        label: "Womens",
-        caption: "The womens collection uses the same grid as the rest of the shop.",
-      },
-    ],
-    system: {
-      typeface: "Inter",
-      colors: [
-        { name: "Field", value: "#0B0B0B" },
-        { name: "Type", value: "#FFFFFF" },
-        { name: "Muted", value: "#9A9A9A" },
-        { name: "Sand", value: "#C9B8A4" },
-        { name: "Card", value: "#141414" },
-        { name: "Line", value: "#2C2C2C" },
-      ],
-    },
-  },
-  {
-    slug: "farm-rush",
-    title: "Farm Rush",
-    year: "2025",
-    featured: false,
-    label: "Game · Product design",
-    summary:
-      "A landing page for Farm Rush, a farming game. I designed the first screen so it explains the game and gives a clear Play now action.",
-    cover: "/images/farm-rush/landing.png",
-    tags: ["Product design", "Game", "Landing page", "Figma"],
-    design: ["Landing page", "Hero", "Game info", "Store badges"],
-    development: [],
-    role: "Product Designer",
-    services: ["Product design", "UX/UI"],
-    stack: ["Figma", "Canva"],
-    challenge:
-      "The game had to feel like play before anyone scrolled. The first screen needed the app stores, the idea of harvest and upgrade, and a reason to tap Play now.",
-    approach:
-      "I designed one landing page: a hero with the character and the store badges, a Play now button, then short sections for farming, expeditions, and rewards.",
-    outcome:
-      "The page reads as a game you can join. A cartoon hero and the store badges introduce Farm Rush, and the rest of the page stays on a dark background.",
-    build:
-      "This is a design case from Behance, drawn in Figma for a Game Nest landing page. It is not a coded website.",
-    highlights: [
-      "One hero that names the game and points to the app stores",
-      "Play now sits with harvest and upgrade, not on a separate page",
-      "Three cards explain farming, expeditions, and rewards",
-      "Game info, platforms, and a subscribe path close the page",
-    ],
-    screens: [
-      {
-        cover: "/images/farm-rush/landing.png",
-        label: "Landing",
-        caption: "The hero shows the farmer, a horse, and buttons for the app stores.",
-      },
-      {
-        cover: "/images/farm-rush/play.png",
-        label: "Play",
-        caption: "Play now sits under a short welcome, with the first two game stills.",
-      },
-      {
-        cover: "/images/farm-rush/fun.png",
-        label: "Fun awaits",
-        caption: "Three cards explain farming, expeditions, and rewards.",
-      },
-      {
-        cover: "/images/farm-rush/cover.png",
-        label: "Win",
-        caption: "A win moment from the game, on the wooden background.",
-      },
-      {
-        cover: "/images/farm-rush/info.png",
-        label: "Info",
-        caption: "The close of the page: game details, other titles, and a way to subscribe.",
-      },
-    ],
-    system: {
-      typeface: "Fredoka",
-      colors: [
-        { name: "Navy", value: "#1A1440" },
-        { name: "Orange", value: "#F0A03A" },
-        { name: "Sky", value: "#7EC8E3" },
-        { name: "Grass", value: "#5CAD3A" },
-        { name: "Type", value: "#FFFFFF" },
-        { name: "Wood", value: "#C47A3A" },
-      ],
-    },
-  },
-  {
-    slug: "uncle-tobi",
-    title: "Uncle Tobi",
-    year: "2025",
-    featured: false,
-    label: "Product design · Team",
-    summary:
-      "A recipes and tips site for Nigerian cooking. I worked with the team on the home page, the recipe list, cooking tips, and video tutorials.",
-    cover: "/images/uncle-tobi/home.png",
-    tags: ["Product design", "Ecommerce", "Web design", "Figma"],
-    design: ["Homepage", "Recipes listing", "Cooking tips", "Video tutorials"],
-    development: [],
-    role: "Product Designer",
-    services: ["Product design", "UX/UI"],
-    stack: ["Figma"],
-    challenge:
-      "People needed to search for a dish, read a tip, or watch a tutorial without getting lost in a dense shop layout.",
-    approach:
-      "I worked with the team. Uncle Tobi is one scroll: a search, the latest recipes, cooking tips, and video tutorials, with the shop in the header.",
-    outcome:
-      "The design opens on Simple and Tasty Recipes. Jollof and egusi are on the first screen, and the recipe list keeps saved dishes close by.",
-    build:
-      "This is a team project. I contributed to the design in Figma. The screens are the shared design, not a solo build.",
-    highlights: [
-      "A search on the first screen for a recipe or a cooking tip",
-      "Latest recipes lead with jollof, egusi, and moi moi",
-      "Cooking tips and video tutorials stay on the same home scroll",
-      "The recipe list keeps saved dishes and recommended tutorials beside it",
-    ],
-    screens: [
-      {
-        cover: "/images/uncle-tobi/home.png",
-        label: "Home",
-        caption: "Home starts with a search, then the latest dishes.",
-      },
-      {
-        cover: "/images/uncle-tobi/listing.png",
-        label: "Recipes",
-        caption: "The recipe list keeps saved dishes and tutorials next to the results.",
-      },
-      {
-        cover: "/images/uncle-tobi/tips.png",
-        label: "Tips",
-        caption: "Cooking tips cover dishes such as pounded yam, boli, and ofada rice.",
-      },
-      {
-        cover: "/images/uncle-tobi/videos.png",
-        label: "Tutorials",
-        caption: "Video tutorials close the home page, with a signup for the shop.",
-      },
-      {
-        cover: "/images/uncle-tobi/cover.png",
-        label: "Poster",
-        caption: "The home page, shown as a poster.",
-      },
-    ],
-    system: {
-      typeface: "Plus Jakarta Sans",
-      colors: [
-        { name: "Leaf", value: "#7CB342" },
-        { name: "Ink", value: "#1A2332" },
-        { name: "Paper", value: "#FFFFFF" },
-        { name: "Muted", value: "#6B7280" },
-        { name: "Field", value: "#1B2430" },
-        { name: "Line", value: "#E5E7EB" },
-      ],
-    },
-  },
-  {
-    slug: "portfolio-app",
-    title: "Portfolio Management App",
-    year: "2025",
-    featured: false,
-    label: "Product design · Mobile",
-    summary:
-      "A mobile app for checking a portfolio. I designed one layout in light and dark, so funds, insights, and invest stay easy to find.",
-    cover: "/images/portfolio/cover.png",
-    tags: ["Product design", "Mobile", "Fintech", "Figma"],
-    design: ["Light mode", "Dark mode", "Portfolio home", "Invest actions"],
-    development: [],
-    role: "Product Designer",
-    services: ["Product design", "UX/UI"],
-    stack: ["Figma"],
-    challenge:
-      "Portfolio apps get noisy. This one had to stay simple in daylight and at night, with Add funds and Invest now easy to spot.",
-    approach:
-      "I designed one layout and used it for both light and dark. The day version has more open space. The night version uses a darker background. The actions stay in the same place.",
-    outcome:
-      "The home screen shows a total, three groups of investments, and a way into funds, invest, and insights. The same screen works in light, in dark, and on a watch.",
-    build:
-      "This is a design case from Behance, drawn in Figma with light and dark themes. It is not a coded app.",
-    highlights: [
-      "One layout for light and dark, not two different apps",
-      "Add funds, Invest now, and View insights are the three actions",
-      "Tech, energy, and real estate show on the first screen",
-      "The same home is shown on a phone, a tablet, and a watch",
-    ],
-    screens: [
-      {
-        cover: "/images/portfolio/cover.png",
-        label: "Themes",
-        caption: "Light and dark share one home screen: the portfolio total and three investment groups.",
-      },
-      {
-        cover: "/images/portfolio/light.jpeg",
-        label: "Light",
-        caption: "The light home on a phone, with Add funds, Invest now, and View insights.",
-      },
-      {
-        cover: "/images/portfolio/flow.png",
-        label: "In hand",
-        caption: "The same light home, shown in a hand.",
-      },
-      {
-        cover: "/images/portfolio/dark.jpeg",
-        label: "Dark",
-        caption: "Dark mode on a tablet keeps the same groups on a quieter background.",
-      },
-      {
-        cover: "/images/portfolio/phone.jpeg",
-        label: "Phone",
-        caption: "The light home on a phone.",
-      },
-      {
-        cover: "/images/portfolio/mock.jpeg",
-        label: "Watch",
-        caption: "The portfolio total on a watch, using the same numbers.",
-      },
-    ],
-    system: {
-      typeface: "Inter",
-      colors: [
-        { name: "Field", value: "#0B0B0B" },
-        { name: "Paper", value: "#F7F7F8" },
-        { name: "Type", value: "#111111" },
-        { name: "Action", value: "#4C6FFF" },
-        { name: "Gain", value: "#1DBF73" },
-        { name: "Card", value: "#1A1A1A" },
+        { name: "Ink", value: "#1c2430" },
+        { name: "Paper", value: "#f6f1ea" },
+        { name: "Violet", value: "#5b4bdb" },
+        { name: "Orange", value: "#f97316" },
+        { name: "Field", value: "#efeae3" },
+        { name: "Line", value: "#e4ddd4" },
       ],
     },
   },
@@ -823,16 +476,9 @@ projects.sort((a, b) => Number(b.year) - Number(a.year));
 
 export const featuredProjects = projects.filter((project) => project.featured !== false);
 
-export const navProjects = projects.filter(
-  (project) =>
-    project.featured !== false ||
-    project.slug === "farm-rush" ||
-    project.slug === "uncle-tobi" ||
-    project.slug === "locepx",
-);
+export const navProjects = projects.filter((project) => project.featured !== false);
 
-export const fillsFrame = (slug: string) =>
-  slug === "stanbic" || slug === "farm-rush" || slug === "uncle-tobi";
+export const fillsFrame = (_slug: string) => false;
 
 export const getProject = (slug: string) => projects.find((project) => project.slug === slug);
 

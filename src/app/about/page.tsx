@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib";
-import { about, experience, notes, skills } from "@/lib/profile";
+import { about, experience, skills } from "@/lib/profile";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks from "@/components/layout/tech-marks";
 import ContactBanner from "@/components/shared/contact-banner";
@@ -13,13 +13,13 @@ import MaskLines from "@/components/shared/mask-lines";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Courage Livingstone is a product designer and frontend developer in Lagos. He designs digital products and builds the interfaces behind them.",
+    "Uche Livingstone is a design operations lead and product designer in Lagos. He designs products and the workflows that get them made.",
 };
 
 const bands = [
   { group: "Design", tone: "text-lime" },
-  { group: "Frontend", tone: "text-lime" },
-  { group: "Practice", tone: "text-lime" },
+  { group: "Operations", tone: "text-lime" },
+  { group: "Technology", tone: "text-lime" },
 ];
 
 export default function AboutPage() {
@@ -31,12 +31,12 @@ export default function AboutPage() {
           <div className="min-w-0 lg:col-span-7">
             <p className="kicker text-lime">About — {site.location}</p>
             <h1 className="display mt-6 text-[clamp(3.2rem,7vw,6.2rem)]">
-              <MaskLines lines={["I’m Courage."]} />
+              <MaskLines lines={["I’m Uche."]} />
             </h1>
             <p className="load-rise load-d2 mt-8 max-w-xl text-2xl leading-tight tracking-[-0.04em] text-lime">
               {about.heading[0]} {about.heading[1]}
             </p>
-            <div className="load-rise load-d3 mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <div className="load-rise load-d3 mt-8 max-w-xl space-y-5 text-sm text-muted-foreground sm:text-base">
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -88,7 +88,7 @@ export default function AboutPage() {
                   {item.title}
                   <span className="text-muted-foreground"> · {item.org}</span>
                 </h3>
-                <p className="mt-2 max-w-md text-lg text-muted-foreground">{item.body}</p>
+                <p className="mt-2 max-w-md text-sm text-muted-foreground sm:text-base">{item.body}</p>
                 <p className="mt-5 text-sm text-lime">{item.place}</p>
               </article>
             ))}
@@ -105,8 +105,8 @@ export default function AboutPage() {
                       {item.title}
                       <span className="text-muted-foreground"> · {item.org}</span>
                     </h3>
-                    <p className="mt-0.5 text-base text-muted-foreground sm:text-lg">{item.place}</p>
-                    <p className="mt-2 max-w-2xl text-base text-muted-foreground sm:text-lg">{item.body}</p>
+                    <p className="mt-0.5 text-sm text-muted-foreground sm:text-base">{item.place}</p>
+                    <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">{item.body}</p>
                   </div>
                 </article>
               </Rise>
@@ -119,7 +119,7 @@ export default function AboutPage() {
         <PageWrapper className="relative">
           <Rise>
             <p className="kicker text-lime">Toolkit</p>
-            <h2 className="display mt-4 text-4xl sm:text-6xl">Design and the build.</h2>
+            <h2 className="display mt-4 text-4xl sm:text-6xl">Tools I work in.</h2>
           </Rise>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {skills.map((group) => {
@@ -144,60 +144,6 @@ export default function AboutPage() {
       </section>
 
       <Study />
-
-      <section className="border-t border-white/10 py-20 md:py-28">
-        <PageWrapper>
-          <Rise>
-            <p className="kicker text-lime">Also</p>
-            <h2 className="display mt-4 text-4xl sm:text-6xl">In public.</h2>
-          </Rise>
-          <div
-            aria-label="In public"
-            className="mt-12 flex snap-x snap-mandatory touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [scroll-padding-inline:0px] md:hidden [&::-webkit-scrollbar]:hidden"
-          >
-            {notes.map((note) => (
-              <article
-                key={note.title}
-                data-slide
-                className="panel flex w-[min(82%,20.5rem)] shrink-0 snap-start snap-always flex-col p-6 last:snap-end"
-              >
-                <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
-                <p className="mt-3 text-lg text-muted-foreground">{note.body}</p>
-                <div className="mt-6 flex flex-wrap gap-4">
-                  {note.links.map((link) => (
-                    <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="text-sm text-lime">
-                      {link.label} →
-                    </a>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="mt-12 hidden gap-4 md:grid md:grid-cols-2">
-            {notes.map((note, index) => (
-              <Rise key={note.title} delay={index * 0.06} className="h-full min-w-0">
-                <article className="panel flex h-full flex-col p-6 sm:p-8">
-                  <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
-                  <p className="mt-3 text-lg text-muted-foreground">{note.body}</p>
-                  <div className="mt-6 flex flex-wrap gap-4">
-                    {note.links.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm text-lime"
-                      >
-                        {link.label} →
-                      </a>
-                    ))}
-                  </div>
-                </article>
-              </Rise>
-            ))}
-          </div>
-        </PageWrapper>
-      </section>
 
       <ContactBanner />
     </article>

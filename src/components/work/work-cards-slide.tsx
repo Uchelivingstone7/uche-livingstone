@@ -64,7 +64,7 @@ const WorkCardsSlide = ({ projects, label, className }: Props) => {
                 <span className="whitespace-nowrap"> · {item.year}</span>
               </p>
               <h3 className="mt-2 text-xl break-words sm:text-2xl">{item.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground sm:text-lg">{item.summary}</p>
+              <p className="mt-2 text-sm text-muted-foreground sm:text-base">{item.summary}</p>
             </div>
           </Link>
         ))}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { site } from "@/lib";
 import PageWrapper from "@/components/layout/page-wrapper";
 import { TechCorners } from "@/components/layout/tech-marks";
 import Rise from "@/components/motion/rise";
@@ -14,8 +13,7 @@ const ContactCta = () => {
           <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Contact</p>
-              <h2 className="display mt-4 text-4xl">Let&apos;s build the product.</h2>
-              <p className="mt-4 max-w-xl text-lg text-muted-foreground">{site.availabilityNote}</p>
+              <h2 className="display mt-4 text-4xl">Let&apos;s shape the work.</h2>
             </div>
             <Link
               href="/contact"
@@ -32,9 +30,8 @@ const ContactCta = () => {
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Contact</p>
               <h2 className="display mt-3 max-w-3xl text-[clamp(1.85rem,6vw,3.6rem)]">
-                Let&apos;s build the product.
+                Let&apos;s shape the work.
               </h2>
-              <p className="mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">{site.availabilityNote}</p>
             </div>
             <Link
               href="/contact"

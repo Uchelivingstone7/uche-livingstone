@@ -21,12 +21,9 @@ export default function WorkPage() {
           <h1 className="display mt-6 max-w-5xl text-[clamp(2.4rem,8vw,7rem)] leading-[1.08] sm:leading-[0.92]">
             <MaskLines lines={["Selected work,", "held in one place."]} />
           </h1>
-          <p className="load-rise load-d2 mt-8 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Hover a project and the image changes. StreamVibe is shipped. Tobams Group is the company
-            site. RLkids is a team EdTech product. StyleLoom is fashion ecommerce. Stanbic is an
-            independent homepage concept. Uncle Tobi is a team project. Locepx is a team
-            project where I did most of the product design, plus the QA and UX research. Farm Rush
-            and the Portfolio Management App sit in the archive from Behance.
+          <p className="load-rise load-d2 mt-8 max-w-xl text-sm text-muted-foreground sm:text-base">
+            Six products. Geoplex, Havara, Conviso, Okeyson Transports, Genflow, and Parentyn.
+            Hover a name and the image changes.
           </p>
         </PageWrapper>
       </section>

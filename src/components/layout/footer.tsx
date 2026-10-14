@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="width-layout grid gap-12 py-20 md:grid-cols-12">
         <div className="md:col-span-6">
           <p className="text-3xl font-medium tracking-[-0.045em] sm:text-4xl">{site.name}</p>
-          <p className="mt-4 max-w-sm text-muted-foreground">
+          <p className="mt-4 max-w-sm text-sm text-muted-foreground sm:text-base">
             {site.role}. {site.location}.
           </p>
         </div>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { site } from "@/lib";
 import PageWrapper from "@/components/layout/page-wrapper";
 import { TechCorners } from "@/components/layout/tech-marks";
 import Rise from "@/components/motion/rise";
@@ -14,7 +13,6 @@ const ContactBanner = () => {
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Next</p>
               <h2 className="display mt-4 text-4xl">Let’s work together.</h2>
-              <p className="mt-4 max-w-xl text-lg text-muted-foreground">{site.availabilityNote}</p>
             </div>
             <Link
               href="/contact"
@@ -30,7 +28,6 @@ const ContactBanner = () => {
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Next</p>
               <h2 className="display mt-3 text-[clamp(1.85rem,6vw,3.6rem)]">Let’s work together.</h2>
-              <p className="mt-4 max-w-md text-sm text-muted-foreground sm:text-base">{site.availabilityNote}</p>
             </div>
             <Link
               href="/contact"

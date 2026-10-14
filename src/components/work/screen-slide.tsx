@@ -34,7 +34,7 @@ const ScreenSlide = ({ screens, title, className }: Props) => {
             </div>
             <figcaption className="mt-4">
               <p className="kicker text-foreground/80">{screen.label}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{screen.caption}</p>
+              <p className="mt-2 text-sm text-muted-foreground sm:text-base">{screen.caption}</p>
             </figcaption>
           </figure>
         ))}

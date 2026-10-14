@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070807;
-  --foreground: #f3f5ef;
-  --card: #101310;
-  --card-foreground: #f3f5ef;
-  --popover: #101310;
-  --popover-foreground: #f3f5ef;
-  --primary: #c6f135;
-  --primary-foreground: #101408;
-  --secondary: #161916;
-  --secondary-foreground: #f3f5ef;
-  --muted: #141714;
-  --muted-foreground: #9aa094;
-  --accent: #c6f135;
-  --accent-foreground: #101408;
+  --background: #110e0c;
+  --foreground: #f6f1e8;
+  --card: #1b1714;
+  --card-foreground: #f6f1e8;
+  --popover: #1b1714;
+  --popover-foreground: #f6f1e8;
+  --primary: #f0a45a;
+  --primary-foreground: #1c140c;
+  --secondary: #211c18;
+  --secondary-foreground: #f6f1e8;
+  --muted: #1a1613;
+  --muted-foreground: #b3a898;
+  --accent: #f0a45a;
+  --accent-foreground: #1c140c;
   --destructive: #e07a68;
   --border: rgba(243, 245, 239, 0.12);
   --input: rgba(243, 245, 239, 0.22);
-  --ring: #c6f135;
+  --ring: #f0a45a;
   --radius: 20px;
   --paper: #e7e2d6;
-  --ink: #101408;
-  --lime: #c6f135;
+  --ink: #1c140c;
+  --lime: #f0a45a;
 }
 
 @theme inline {
@@ -71,7 +71,7 @@
   .panel {
     border-radius: 22px;
     border: 1px solid rgba(243, 245, 239, 0.12);
-    background: #101310;
+    background: #1b1714;
   }
 
   .kicker {
@@ -85,12 +85,12 @@
   .btn-lime {
     -webkit-appearance: none;
     appearance: none;
-    background-color: #c6f135;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23c6f135'/%3E%3C/svg%3E"), linear-gradient(#c6f135, #c6f135);
+    background-color: #f0a45a;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23f0a45a'/%3E%3C/svg%3E"), linear-gradient(#f0a45a, #f0a45a);
     background-repeat: repeat, no-repeat;
     background-size: 2px 2px, 100% 100%;
-    color: #101408;
-    -webkit-text-fill-color: #101408;
+    color: #1c140c;
+    -webkit-text-fill-color: #1c140c;
     forced-color-adjust: none;
   }
 }
@@ -105,7 +105,7 @@
     overflow-x: clip;
     overflow-y: auto;
     color-scheme: light only;
-    accent-color: #c6f135;
+    accent-color: #f0a45a;
     forced-color-adjust: none;
     text-size-adjust: 100%;
   }
@@ -148,8 +148,8 @@
   }
 
   ::selection {
-    background: #c6f135;
-    color: #101408;
+    background: #f0a45a;
+    color: #1c140c;
   }
 
   h1,
@@ -179,13 +179,13 @@
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -5px;
+  left: 0.65rem;
+  right: 0.65rem;
+  bottom: 0.35rem;
   height: 1px;
-  width: 100%;
   transform: scaleX(0);
   transform-origin: left;
-  background: currentColor;
+  background: var(--lime);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -284,8 +284,6 @@
 .portrait-frame {
   --px: 0px;
   --py: 0px;
-  --lx: 50%;
-  --ly: 28%;
 }
 
 .portrait-reveal {
@@ -293,18 +291,8 @@
 }
 
 .portrait-photo {
-  filter: grayscale(0.72) contrast(1.05) brightness(0.88);
   transform: scale(1.02) translate3d(var(--px), var(--py), 0);
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.portrait-light {
-  background: radial-gradient(
-    480px circle at var(--lx) var(--ly),
-    rgba(239, 236, 228, 0.14),
-    transparent 62%
-  );
-  mix-blend-mode: soft-light;
 }
 
 @media (pointer: fine) {
@@ -360,8 +348,8 @@
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(198, 241, 53, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(198, 241, 53, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(240, 164, 90, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 164, 90, 0.1) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black, transparent 70%);
   animation: grid-pan 18s linear infinite;
@@ -382,8 +370,8 @@
   width: 0.07em;
   height: 0.78em;
   margin-left: 0.08em;
-  background: #c6f135;
-  box-shadow: 0 0 14px #c6f135;
+  background: #f0a45a;
+  box-shadow: 0 0 14px #f0a45a;
   vertical-align: -0.06em;
   animation: caret-blink 0.9s steps(1) infinite;
 }
@@ -400,7 +388,7 @@
   to { transform: translateX(130%); }
 }
 
-.sheen { position: relative; }
+.sheen { position: relative; overflow: hidden; }
 .sheen::after {
   content: "";
   pointer-events: none;
@@ -436,9 +424,16 @@
 .hero-wash-a {
   top: -8%;
   left: -6%;
-  background: #c6f135;
+  background: #f0a45a;
   opacity: 0.14;
   animation: wash 18s ease-in-out infinite;
+}
+
+.hero-wash-stage {
+  top: 12%;
+  right: -10%;
+  left: auto;
+  opacity: 0.12;
 }
 
 .hero-wash-b {
@@ -501,18 +496,18 @@
   .hero-scan,
   .orbit,
   .orbit-rev,
-  .sheen::after,
-  .hero-wash-a,
-  .hero-wash-b {
+  .sheen::after {
     animation: none;
     opacity: 1;
   }
 
-  .hero-write .hero-char {
-    opacity: 1;
+  .hero-wash-a,
+  .hero-wash-b,
+  .hero-wash-stage {
+    animation: none;
   }
 
-  .portrait-light {
-    display: none;
+  .hero-write .hero-char {
+    opacity: 1;
   }
 }

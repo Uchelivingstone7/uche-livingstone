@@ -33,7 +33,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#070807",
+  themeColor: "#110e0c",
 };
 
 export const metadata: Metadata = {
@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
   },
-  icons: { icon: "/images/logo-cl.png", apple: "/images/logo-cl.png" },
 };
 
 export default function RootLayout({
@@ -78,24 +77,24 @@ export default function RootLayout({
             color-scheme: light only;
             -webkit-appearance: none;
             appearance: none;
-            background-color: #c6f135;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23c6f135'/%3E%3C/svg%3E"), linear-gradient(#c6f135, #c6f135);
+            background-color: #f0a45a;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23f0a45a'/%3E%3C/svg%3E"), linear-gradient(#f0a45a, #f0a45a);
             background-repeat: repeat, no-repeat;
             background-size: 2px 2px, 100% 100%;
-            color: #101408 !important;
-            -webkit-text-fill-color: #101408 !important;
+            color: #1c140c !important;
+            -webkit-text-fill-color: #1c140c !important;
             forced-color-adjust: none;
             filter: none;
           }
           .btn-ink {
-            color: #101408 !important;
-            -webkit-text-fill-color: #101408 !important;
+            color: #1c140c !important;
+            -webkit-text-fill-color: #1c140c !important;
             background-image: none;
             forced-color-adjust: none;
           }
           .banner-glow {
             background-color: transparent;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='8' height='8' fill='%23c6f135' fill-opacity='0.15'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='8' height='8' fill='%23f0a45a' fill-opacity='0.15'/%3E%3C/svg%3E");
             background-repeat: repeat;
             filter: blur(64px);
             forced-color-adjust: none;
