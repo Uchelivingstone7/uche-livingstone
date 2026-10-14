@@ -160,8 +160,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <Link href="/about" className="group panel relative block overflow-hidden lg:col-span-5">
-            <div className="relative aspect-[4/5] bg-[#101010]">
+          <Link href="/about" className="@container group panel relative block overflow-hidden lg:col-span-5">
+            <div className="relative aspect-[4/5] w-full bg-[#101010] lg:aspect-auto lg:h-[min(125cqw,calc(100svh-15.5rem))]">
               <Image
                 src="/images/uche/Profile.jpeg"
                 alt="Uche Livingstone"

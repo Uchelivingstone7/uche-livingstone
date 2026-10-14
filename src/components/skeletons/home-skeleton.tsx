@@ -19,7 +19,9 @@ const HomeSkeleton = () => {
                 <Skeleton className="h-10 w-40 rounded-full" />
               </div>
             </div>
-            <Skeleton className="aspect-[4/5] w-full rounded-[22px] lg:col-span-5" />
+            <div className="@container lg:col-span-5">
+              <Skeleton className="aspect-[4/5] w-full rounded-[22px] lg:aspect-auto lg:h-[min(125cqw,calc(100svh-15.5rem))]" />
+            </div>
           </div>
         </div>
       </section>
