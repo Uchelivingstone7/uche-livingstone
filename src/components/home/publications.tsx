@@ -9,11 +9,11 @@ const Publications = () => {
       <PageWrapper>
         <Rise className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="kicker text-lime">Press</p>
-            <h2 className="display mt-4 text-4xl sm:text-6xl">Featured publications</h2>
+            <p className="kicker text-lime">News</p>
+            <h2 className="display mt-4 text-4xl sm:text-6xl">In the news.</h2>
           </div>
-          <Link href="/publications" className="text-sm text-lime underline-offset-4 hover:underline">
-            All press →
+          <Link href="/news" className="text-sm text-lime underline-offset-4 hover:underline">
+            All news →
           </Link>
         </Rise>
         <div className="mt-12 grid gap-4 lg:grid-cols-3">

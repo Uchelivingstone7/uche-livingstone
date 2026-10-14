@@ -7,9 +7,8 @@ import MaskLines from "@/components/shared/mask-lines";
 import ContactBanner from "@/components/shared/contact-banner";
 
 export const metadata: Metadata = {
-  title: "Publications",
-  description:
-    "Press on EN1 Technologies and solar-powered vehicles for the African market, featuring work connected to Uche Livingstone.",
+  title: "News",
+  description: "News on EN1 Technologies, connected to Uche Livingstone.",
 };
 
 export default function PublicationsPage() {
@@ -18,12 +17,12 @@ export default function PublicationsPage() {
       <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24">
         <TechMarks />
         <PageWrapper className="relative">
-          <p className="kicker text-lime">Press</p>
+          <p className="kicker text-lime">News</p>
           <h1 className="display mt-6 max-w-5xl text-[clamp(3.2rem,7.4vw,6.6rem)]">
-            <MaskLines lines={["In the press."]} />
+            <MaskLines lines={["News."]} />
           </h1>
           <p className="load-rise load-d2 mt-8 max-w-2xl text-sm text-muted-foreground sm:text-base">
-            Press that sits next to my work at EN1 Technologies.
+            News that sits next to my work at EN1 Technologies.
           </p>
         </PageWrapper>
       </section>

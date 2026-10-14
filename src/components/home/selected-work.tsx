@@ -11,7 +11,7 @@ import ProjectMedia from "@/components/work/project-media";
 import WorkCardsSlide from "@/components/work/work-cards-slide";
 import { pinTrackHeight, usePinnedWork } from "@/components/work/use-pinned-work";
 
-const selected = featuredProjects.slice(0, 3);
+const selected = featuredProjects.filter((project) => project.slug !== "vecta").slice(0, 3);
 
 const SelectedWork = () => {
   const reduce = useReducedMotion();

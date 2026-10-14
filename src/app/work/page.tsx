@@ -22,7 +22,7 @@ export default function WorkPage() {
             <MaskLines lines={["Selected work,", "held in one place."]} />
           </h1>
           <p className="load-rise load-d2 mt-8 max-w-xl text-sm text-muted-foreground sm:text-base">
-            Six products. Geoplex, Havara, Conviso, Okeyson Transports, Genflow, and Parentyn.
+            Seven products. Geoplex, Havara, Conviso, Okeyson Transports, Genflow, Parentyn, and Vecta.
             Hover a name and the image changes.
           </p>
         </PageWrapper>

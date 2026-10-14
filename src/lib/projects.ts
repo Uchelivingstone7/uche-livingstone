@@ -470,6 +470,79 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: "vecta",
+    title: "Vecta",
+    year: "2026",
+    label: "Product design · AI",
+    summary:
+      "Vecta Studio brings video, audio, images, scripts, and voice into one place. The site has to make that feel like a single studio, not a pile of separate tools.",
+    cover: "/images/vecta/home.png",
+    tags: ["Product design", "AI", "Creative", "Workflow"],
+    design: ["Product narrative", "Interface hierarchy", "Page structure"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX", "Content structure"],
+    stack: ["Figma"],
+    challenge:
+      "A creator already splits the work across tools for script, image, voice, and video. The page has to show those jobs as one flow.",
+    approach:
+      "I opened on the job: stop juggling tools and start creating. The page then names the friction, shows the studio, and walks from an idea through build, refine, and publish.",
+    outcome:
+      "Vecta reads as one studio. The tools, the kinds of video, and the path from an idea to a published piece sit on the same page.",
+    build:
+      "Product design for the public site at vectastudio.ai. The live page introduces the studio, the tools inside it, and how a creator moves from an idea to a video.",
+    highlights: [
+      "The first screen states one workflow for video, audio, images, scripts, and voice",
+      "The friction of separate tools is named before the product is shown",
+      "Tools sit together: video, music, voice, images, and scripts",
+      "The path is four steps, from the idea to publish",
+    ],
+    screens: [
+      {
+        cover: "/images/vecta/home.png",
+        label: "Home",
+        caption: "The first screen says the job: one workflow for video, audio, images, scripts, and voice.",
+      },
+      {
+        cover: "/images/vecta/problem.png",
+        label: "Friction",
+        caption: "The page names why the stack breaks: too many tools, setup, and switching between them.",
+      },
+      {
+        cover: "/images/vecta/studio.png",
+        label: "Studio",
+        caption: "The studio is one place for the characters, scenes, and files a project holds.",
+      },
+      {
+        cover: "/images/vecta/tools.png",
+        label: "Tools",
+        caption: "Video, music, voice, images, and scripts are listed as one set of tools.",
+      },
+      {
+        cover: "/images/vecta/cases.png",
+        label: "Use cases",
+        caption: "The work is grouped by what a creator makes: marketing, stories, education, and announcements.",
+      },
+      {
+        cover: "/images/vecta/steps.png",
+        label: "Steps",
+        caption: "The path is four steps: describe the idea, build it, refine it, then publish.",
+      },
+    ],
+    live: "https://vectastudio.ai/",
+    system: {
+      typeface: "Geometric sans",
+      colors: [
+        { name: "Ink", value: "#070707" },
+        { name: "Paper", value: "#ffffff" },
+        { name: "Violet", value: "#6d28d9" },
+        { name: "Blue", value: "#2563eb" },
+        { name: "Field", value: "#141414" },
+        { name: "Line", value: "#2a2a2a" },
+      ],
+    },
+  },
 ];
 
 projects.sort((a, b) => Number(b.year) - Number(a.year));

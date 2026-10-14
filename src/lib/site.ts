@@ -14,10 +14,11 @@ export const site = {
   location: "Lagos, Nigeria",
   nav: [
     { href: "/about", label: "About" },
+    { href: "/experience", label: "Experience" },
     { href: "/work", label: "Work" },
     { href: "/practice", label: "Practice" },
-    { href: "/experience", label: "Experience" },
-    { href: "/publications", label: "Publications" },
+    { href: "/news", label: "News" },
+    { href: "/publication", label: "Publication" },
     { href: "/contact", label: "Contact" },
   ],
   socials: [{ href: "https://www.linkedin.com/in/uchelivingstone/", label: "LinkedIn" }],

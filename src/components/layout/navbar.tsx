@@ -58,7 +58,7 @@ const Navbar = () => {
   const currentNav = navProjects[preview ?? 0] ?? navProjects[0];
 
   const active = (href: string) =>
-    href === "/work" ? pathname.startsWith("/work") : pathname === href;
+    href === "/work" || href === "/publication" ? pathname.startsWith(href) : pathname === href;
 
   return (
     <>
