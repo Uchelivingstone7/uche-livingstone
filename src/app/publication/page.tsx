@@ -19,7 +19,7 @@ export default function WritingPage() {
       <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24">
         <TechMarks />
         <PageWrapper className="relative">
-          <p className="kicker text-lime">Publication</p>
+          <p className="kicker text-lime">Books</p>
           <h1 className="display mt-6 max-w-5xl text-[clamp(3.2rem,7.4vw,6.6rem)]">
             <MaskLines lines={["Publication."]} />
           </h1>

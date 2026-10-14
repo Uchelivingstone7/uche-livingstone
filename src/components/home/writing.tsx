@@ -9,7 +9,8 @@ const Writing = () => {
     <section id="publication" className="scroll-mt-28 border-t border-border py-20 md:py-28">
       <PageWrapper>
         <Rise>
-          <h2 className="kicker text-lime">Publication</h2>
+          <p className="kicker text-lime">Books</p>
+          <h2 className="display mt-4 text-4xl sm:text-6xl">Publication</h2>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
             A collection of books thoughtfully designed by Uche.
           </p>
